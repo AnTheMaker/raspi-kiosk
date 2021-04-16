@@ -12,14 +12,16 @@ sudo apt-get install chromium-browser -y
 sudo apt-get install unclutter -y 
 ```
 Chrome is the browser and unclutter is a software to hide your cursor after a while.
-3. Open chrom and install the following extension: [Autorefresh on Error](https://chrome.google.com/webstore/detail/autorefresh-on-error/cacnfebiodkggmdjhecdkendmeimjioa). This extension will refresh the page every X seconds whenever there is an error.
+
+3. Open chrome and install the following extension: [Autorefresh on Network Error](https://chrome.google.com/webstore/detail/autorefresh-on-network-er/milcogahlcilalagefhdhnoikibkoloo). This extension will refresh the page every X seconds whenever there is an error.
+
 4. Now, let's configure the Pi so it doesnt show any warnings (such as "too little voltage"): `sudo nano /boot/config.txt` and add the following to the end of the file:
 ```
 # Disable under-voltage warning
 avoid_warnings=1
 ```
 Now, reboot the system: `sudo reboot`
-5. Next, we will edit the autostart script to automatically start unclutter (to hide the cursor), disable the screensaver and start our `kiosk.sh` script (which we will create in the next step): `sudo nano /etc/xdg/lxsession/LXDE-pi/autostart`
+5. Next, we will edit the autostart script to automatically start unclutter (to hide the cursor), disable the screensaver and start our `kiosk.sh` script (which we will create in the next step) - add the below lines to the end of the file: `sudo nano /etc/xdg/lxsession/LXDE-pi/autostart`
 ```
 # hide the cursor after some time:
 @unclutter
