@@ -34,6 +34,8 @@ Now, reboot the system: `sudo reboot`
 ```
 6. Now, we create our `kiosk.sh` script to automatically start Chrome in kiosk mode on display 2 (the public display) and start chrome in "normal" mode on screen 1 (our admin screen): `nano /home/pi/kiosk.sh`
 ```
+#!/bin/bash
+
 echo "STARTING KIOSK SCRIPT"
 
 # wait 12 seconds to make sure everything is done booting up:
