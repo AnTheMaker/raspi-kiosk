@@ -34,8 +34,14 @@ Now, reboot the system: `sudo reboot`
 ```
 6. Now, we create our `kiosk.sh` script to automatically start Chrome in kiosk mode on display 2 (the public display) and start chrome in "normal" mode on screen 1 (our admin screen): `nano /home/pi/kiosk.sh`
 ```
+echo "STARTING KIOSK SCRIPT"
+
+# wait 12 seconds to make sure everything is done booting up:
+sleep 12
+
 # start chrome in fullscreen kiosk mode on display 2 (the public display):
 chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --kiosk --start-maximized --display=:1 --incognito --disable-infobars http://localhost/
+
 # start chrome in "normal" mode on display 1 (the admin display):
 chromium-browser --no-sandbox --enable-native-gpu-memory-buffers  --start-maximized --display=:0 http://localhost/admin
 ```
