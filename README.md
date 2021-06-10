@@ -59,6 +59,6 @@ chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --start-maximiz
 ```
 sudo apt install apache2 -y
 sudo apt install php libapache2-mod-php -y
-sudo apt install php7.0-mbstring php7.0-zip php7.0-xml -y
+sudo apt install php-mbstring php-zip php-xml -y
 sudo chmod 777 /var/www/html #not ideal, but it works so yolo
 ```
