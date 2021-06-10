@@ -32,7 +32,7 @@ Now, reboot the system: `sudo reboot`
 @xset s noblank
 
 # start the kiosk.sh script:
-@/home/pi/kiosk.sh
+@bash /home/pi/kiosk.sh
 ```
 6. Now, we create our `kiosk.sh` script to automatically start Chrome in kiosk mode on display 2 (the public display) and start chrome in "normal" mode on screen 1 (our admin screen): `nano /home/pi/kiosk.sh`
 ```
