@@ -62,3 +62,16 @@ sudo apt install php libapache2-mod-php -y
 sudo apt install php-mbstring php-zip php-xml -y
 sudo chmod 777 /var/www/html #not ideal, but it works so yolo
 ```
+
+# Some helpful Links
+Setting up the chrome kiosk mode on multiple displays:
+- https://raspberrypi.stackexchange.com/a/104876
+- https://www.raspberrypi.org/forums/viewtopic.php?t=257688
+- https://www.raspberrypi.org/forums/viewtopic.php?t=247169
+
+All chromium CLI parameters:
+- https://peter.sh/experiments/chromium-command-line-switches/
+
+Fix wront time:
+- https://askubuntu.com/questions/214246/how-to-fix-wrong-system-time-and-date
+
