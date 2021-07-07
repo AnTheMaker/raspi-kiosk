@@ -43,11 +43,18 @@ echo "STARTING KIOSK SCRIPT"
 # wait 12 seconds to make sure everything is done booting up:
 sleep 12
 
-# start chrome in fullscreen kiosk mode on display 2 (the public display):
-chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --kiosk --start-maximized --disable-features=Translate --display=:1 --incognito --disable-infobars http://localhost/
+# start chrome in fullscreen kiosk mode on display 1 (the public display):
+chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --kiosk --start-maximized --start-fullscreen --new-window --disable-features=Translate --disable-infobars --user-data-dir="/home/pi/Documents/Profiles/1" --window-position=1025,0 --app=http://localhost/ &
 
-# start chrome in "normal" mode on display 1 (the admin display):
-chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --start-maximized --disable-features=Translate --display=:0 http://localhost/admin
+sleep 2
+
+# start chrome in "normal" mode on display 2 (the admin display):
+chromium-browser --enable-native-gpu-memory-buffers --start-maximized --start-fullscreen --new-window --disable-features=Translate --user-data-dir="/home/pi/Documents/Profiles/2" --window-position=0,0 --app=http://localhost/admin &
+
+
+# if just a single monitor:
+#chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --kiosk --start-maximized --disable-features=Translate --incognito --disable-infobars http://localhost/
+
 ```
 7. As a last thing, wel will set up a cronjob to reboot the Pi every day at 1am at night, so it can fix itself if it should have any error :) - to do that, open crontab as admin: `sudo crontab -e` and add the following line to the end of it:
 ```
