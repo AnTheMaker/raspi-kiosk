@@ -69,6 +69,11 @@ sudo apt install php libapache2-mod-php -y
 sudo apt install php-mbstring php-zip php-xml -y
 sudo chmod 777 /var/www/html #not ideal, but it works so yolo
 ```
+9. If the time is incorrect (our school blocked the port of time servers!), install htpdate
+```
+sudo apt install htpdate
+date
+```
 
 # Some helpful Links
 Setting up the chrome kiosk mode on multiple displays:
@@ -79,6 +84,6 @@ Setting up the chrome kiosk mode on multiple displays:
 All chromium CLI parameters:
 - https://peter.sh/experiments/chromium-command-line-switches/
 
-Fix wront time:
-- https://askubuntu.com/questions/214246/how-to-fix-wrong-system-time-and-date
+Fix wrong time:
+- https://www.raspberrypi.org/forums/viewtopic.php?t=222236
 
