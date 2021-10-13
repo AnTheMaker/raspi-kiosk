@@ -56,10 +56,13 @@ chromium-browser --enable-native-gpu-memory-buffers --start-maximized --start-fu
 #chromium-browser --no-sandbox --enable-native-gpu-memory-buffers --kiosk --start-maximized --disable-features=Translate --incognito --disable-infobars http://localhost/
 
 ```
-7. As a last thing, wel will set up a cronjob to reboot the Pi every day at 1am at night, so it can fix itself if it should have any error :) - to do that, open crontab as admin: `sudo crontab -e` and add the following line to the end of it:
+7. As a last thing, we will set up a cronjob to reboot the Pi every day at 1am at night, so it can do updates and fix itself if it should have any error :) - to do that, open crontab as admin: `sudo crontab -e` and add the following line to the end of it:
 ```
 # reboot every night at 1am:
 0 1 * * * /sbin/reboot
+
+# get and install package updates after reboot
+@reboot apt update && apt upgrade -y
 ```
 
 8. (Optional) install a webserver (apacahe) and php!
