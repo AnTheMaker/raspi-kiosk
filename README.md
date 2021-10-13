@@ -69,7 +69,7 @@ chromium-browser --enable-native-gpu-memory-buffers --start-maximized --start-fu
 ```
 sudo apt install apache2 -y
 sudo apt install php libapache2-mod-php -y
-sudo apt install php-mbstring php-zip php-xml -y
+sudo apt install php-mbstring php-zip php-xml php-curl -y
 sudo chmod 777 /var/www/html #not ideal, but it works so yolo
 ```
 9. If the time is incorrect (our school blocked the port of time servers!), install htpdate
